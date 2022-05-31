@@ -4,6 +4,7 @@ import "./App.css";
 import Nav from "./components/nav/nav.component";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import MovieDetail from "./pages/MovieDetail";
 import OurWork from "./pages/OurWork";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<AboutUs />} />
         <Route exact path="/work" element={<OurWork />} />
+        <Route path="/work/:id" element={<MovieDetail />} />
         <Route exact path="/contact" element={<ContactUs />} />
       </Routes>
     </div>
