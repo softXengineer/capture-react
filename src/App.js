@@ -1,12 +1,20 @@
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/nav/nav.component";
 import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import OurWork from "./pages/OurWork";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <AboutUs />
+      <Routes>
+        <Route exact path="/" element={<AboutUs />} />
+        <Route exact path="/work" element={<OurWork />} />
+        <Route exact path="/contact" element={<ContactUs />} />
+      </Routes>
     </div>
   );
 }
