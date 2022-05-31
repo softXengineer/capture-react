@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./faqSection.styles.scss";
+
 const FaqSection = () => {
   return (
     <div className="faq">

@@ -1,9 +1,11 @@
 import React from "react";
-import home1 from "../img/home1.png";
+
+import home1 from "../../img/home1.png";
+import "./aboutSection.styles.scss";
 
 const AboutSection = () => {
   return (
-    <div>
+    <div className="about">
       <div className="description">
         <div className="title">
           <div className="hide">
