@@ -17,6 +17,7 @@ const FaqSection = () => {
             adipisci.
           </p>
         </div>
+        <div className="faq-line"></div>
       </div>
       <div className="question">
         <h4>Daily schedule</h4>
@@ -27,6 +28,7 @@ const FaqSection = () => {
             adipisci.
           </p>
         </div>
+        <div className="faq-line"></div>
       </div>
       <div className="question">
         <h4>Different payment methods</h4>
@@ -37,6 +39,7 @@ const FaqSection = () => {
             adipisci.
           </p>
         </div>
+        <div className="faq-line"></div>
       </div>
       <div className="question">
         <h4>What product do you offer?</h4>
@@ -47,6 +50,7 @@ const FaqSection = () => {
             adipisci.
           </p>
         </div>
+        <div className="faq-line"></div>
       </div>
     </div>
   );
