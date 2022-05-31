@@ -6,6 +6,8 @@
 
 body {
   background: #1b1b1b;
+  font-family: "Inter", sans-serif;
+  /* font-family: "Lobster", cursive; */
 }
 
 button {
@@ -15,6 +17,7 @@ button {
   padding: 1rem 2rem;
   border: 3px solid #23d997;
   background: transparent;
+  font-family: "Inter", sans-serif;
   color: #fff;
   transition: background-color 0.3s ease;
 }
