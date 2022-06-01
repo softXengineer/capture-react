@@ -1,58 +1,83 @@
 import React from "react";
+import { motion } from "framer-motion";
+import Toggle from "../toggle/toggle.component";
+import { AnimateSharedLayout } from "framer-motion";
 
 import "./faqSection.styles.scss";
+import { useScroll } from "../../useScroll";
+import { fade, titleAnim } from "../../animation";
 
 const FaqSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <div className="faq">
-      <h2>
-        Any Questions? <span>FAQ</span>
-      </h2>
-      <div className="question">
-        <h4>How do I start?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
-            adipisci.
-          </p>
+    <motion.div
+      variants={fade}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+      className="faq"
+    >
+      <div className="title">
+        <div className="hide">
+          <motion.h2
+            variants={titleAnim}
+            ref={element}
+            animate={controls}
+            initial="hidden"
+          >
+            Any Questions?
+          </motion.h2>
         </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>Daily schedule</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
-            adipisci.
-          </p>
+        <div className="hide">
+          <motion.h2
+            variants={titleAnim}
+            ref={element}
+            animate={controls}
+            initial="hidden"
+          >
+            <span>FAQ</span>
+          </motion.h2>
         </div>
-        <div className="faq-line"></div>
       </div>
-      <div className="question">
-        <h4>Different payment methods</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
-            adipisci.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>What product do you offer?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
-            adipisci.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-    </div>
+      <AnimateSharedLayout>
+        <Toggle title="How do I start?">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Architecto, adipisci.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Daily schedule">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Architecto, adipisci.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Different payment methods">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Architecto, adipisci.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="What product do you offer?">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Architecto, adipisci.
+            </p>
+          </div>
+        </Toggle>
+      </AnimateSharedLayout>
+    </motion.div>
   );
 };
 

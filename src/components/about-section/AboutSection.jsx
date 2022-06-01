@@ -1,7 +1,10 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import home1 from "../../img/home1.png";
 import "./aboutSection.styles.scss";
+import { titleAnim, fade, photoAnim } from "../../animation";
+import Wave from "../wave/wave.component";
 
 const AboutSection = () => {
   return (
@@ -9,26 +12,27 @@ const AboutSection = () => {
       <div className="description">
         <div className="title">
           <div className="hide">
-            <h2>We work to make</h2>
+            <motion.h2 variants={titleAnim}>We work to make</motion.h2>
           </div>
           <div className="hide">
-            <h2>
+            <motion.h2 variants={titleAnim}>
               your <span>dreams</span>
-            </h2>
+            </motion.h2>
           </div>
           <div className="hide">
-            <h2>come true</h2>
+            <motion.h2 variants={titleAnim}>come true</motion.h2>
           </div>
         </div>
-        <p>
+        <motion.p variants={fade}>
           Contact us for any photography or videography ideas that you have. We
           have professionals with amazing skils.
-        </p>
-        <button>Contact Us</button>
+        </motion.p>
+        <motion.button variants={fade}>Contact Us</motion.button>
       </div>
       <div className="image">
-        <img src={home1} alt="Guy with a camera" />
+        <motion.img variants={photoAnim} src={home1} alt="Guy with a camera" />
       </div>
+      <Wave />
     </div>
   );
 };

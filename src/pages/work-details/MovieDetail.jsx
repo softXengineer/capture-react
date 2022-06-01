@@ -1,8 +1,11 @@
 import { createBrowserHistory } from "history";
 import React, { useEffect, useState } from "react";
-import { MovieState } from "../movieState";
+import { MovieState } from "../../movieState";
+import { motion } from "framer-motion";
 
 import "./movieDetail.styles.scss";
+import { pageAnimation } from "../../animation";
+import ScrollToTop from "../../scrollToTop";
 
 const MovieDetail = () => {
   const history = createBrowserHistory();
@@ -18,7 +21,13 @@ const MovieDetail = () => {
   return (
     <>
       {movie && (
-        <div className="details">
+        <motion.div
+          className="details"
+          variants={pageAnimation}
+          exit="exit"
+          initial="hidden"
+          animate="show"
+        >
           <div className="headline">
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt={movie.title} />
@@ -31,7 +40,8 @@ const MovieDetail = () => {
           <div className="image-display">
             <img src={movie.secondaryImg} alt={movie.title} />
           </div>
-        </div>
+          <ScrollToTop />
+        </motion.div>
       )}
     </>
   );

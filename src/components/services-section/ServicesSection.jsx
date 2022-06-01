@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "./servicesSection.styles.scss";
 import clock from "../../img/clock.svg";
@@ -6,10 +7,20 @@ import money from "../../img/money.svg";
 import diaphragm from "../../img/diaphragm.svg";
 import teamwork from "../../img/teamwork.svg";
 import home2 from "../../img/home2.png";
+import { useScroll } from "../../useScroll";
+import { photoAnim, scrollReveal, fade } from "../../animation";
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
+
   return (
-    <div className="services">
+    <motion.div
+      variants={scrollReveal}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+      className="services"
+    >
       <div className="description">
         <h2>
           High <span>quality</span> services
@@ -46,9 +57,16 @@ const ServicesSection = () => {
         </div>
       </div>
       <div className="image">
-        <img src={home2} alt="camera" />
+        <motion.img
+          src={home2}
+          alt="camera"
+          variants={photoAnim}
+          ref={element}
+          animate={controls}
+          initial="hidden"
+        />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

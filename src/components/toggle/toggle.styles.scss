@@ -1,0 +1,17 @@
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-size: 3rem;
+    font-weight: normal;
+    color: #fff;
+    cursor: pointer;
+    div {
+      transition: transform 0.3s ease;
+      &.active {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
